@@ -1,4 +1,4 @@
-package ru.sr.testtaskfooddelivery.feature_home
+package ru.sr.testtaskfooddelivery.feature_home.presentation.home
 
 import android.view.LayoutInflater
 import ru.sr.testtaskfooddelivery.base.BaseFragment

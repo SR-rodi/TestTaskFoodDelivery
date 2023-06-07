@@ -40,6 +40,7 @@ dependencies {
     implementation(project(Module.featureHome))
     implementation(project(Module.featureSearch))
     implementation(project(Module.storage))
+    implementation(project(Module.core))
 
     implementation (Dependencies.Navigation.fragment)
     implementation (Dependencies.Navigation.ui)
@@ -54,8 +55,8 @@ dependencies {
     implementation("com.squareup.okhttp3:okhttp")
     implementation("com.squareup.okhttp3:logging-interceptor")
 
-    implementation( "io.insert-koin:koin-core:3.4.2")
-    implementation( "io.insert-koin:koin-android:3.4.2")
+    implementation( Dependencies.Di.koinCore)
+    implementation( Dependencies.Di.koinAndroid)
 
     implementation (Dependencies.Core.coreKtx)
     implementation (Dependencies.Core.appcompat)

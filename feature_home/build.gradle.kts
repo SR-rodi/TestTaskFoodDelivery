@@ -27,10 +27,14 @@ dependencies {
 
     implementation(project(Module.coreUi))
     implementation(project(Module.core))
+    implementation(project(Module.storage))
 
-    implementation (Dependencies.Navigation.fragment)
-    implementation (Dependencies.Navigation.ui)
+    implementation(Dependencies.Navigation.fragment)
+    implementation(Dependencies.Navigation.ui)
 
-    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.1")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1")
+    implementation(Dependencies.Di.koinCore)
+    implementation(Dependencies.Di.koinAndroid)
+
+    implementation(Dependencies.Core.lifecycle)
+    implementation(Dependencies.Core.viewmodel)
 }

@@ -4,6 +4,7 @@ import android.app.Application
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 import ru.sr.testtaskfooddelivery.di.appModule
+import ru.sr.testtaskfooddelivery.feature_home.di.homeModule
 
 class StoreApp : Application() {
 
@@ -12,7 +13,7 @@ class StoreApp : Application() {
 
         startKoin {
             androidContext(this@StoreApp)
-            modules(appModule())
+            modules(appModule() + homeModule())
         }
     }
 }

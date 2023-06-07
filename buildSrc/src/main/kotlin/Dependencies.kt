@@ -19,7 +19,7 @@ object Dependencies {
         const val kotlinBoomVersions = "1.8.0"
         const val lifecycleVersions = "2.6.1"
         const val roomVersions = "2.5.1"
-        const val koinVersions = "3.4.0"
+        const val koinVersions = "3.4.2"
         const val navigationVersions = "2.5.3"
     }
 
@@ -46,8 +46,8 @@ object Dependencies {
     }
 
     object Di {
-        val koin = ("io.insert-koin:koin-android:$koinVersions")
-        val koinAndroid = ("io.insert-koin:koin-androidx-compose:$koinVersions")
+        val koinCore = ( "io.insert-koin:koin-core:$koinVersions")
+        val koinAndroid = ( "io.insert-koin:koin-android:$koinVersions")
     }
 
     object Navigation{

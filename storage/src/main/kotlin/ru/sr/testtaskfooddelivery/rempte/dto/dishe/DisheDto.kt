@@ -5,7 +5,8 @@ import com.google.gson.annotations.SerializedName
 data class DisheDto(
     val description: String,
     val id: Int,
-    val image_url: String,
+    @SerializedName("image_url")
+    val imageUrl: String,
     val name: String,
     val price: Int,
     @SerializedName("tegs")
