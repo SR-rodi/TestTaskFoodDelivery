@@ -20,11 +20,13 @@ fun retrofitModule() = module {
     }
 
     single {
+
         Retrofit
             .Builder()
             .baseUrl(BASE_URL)
             .client(get())
             .addConverterFactory(GsonConverterFactory.create())
+            .build()
     }
 
     single<StoreApi> { get<Retrofit>().create() }

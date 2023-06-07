@@ -22,13 +22,10 @@ abstract class BaseViewModel<State : Any>(initialState: State) : ViewModel() {
 
     fun viewStates() = _viewStates.asStateFlow()
 
-    protected open fun onError(e: Exception) {
-        Log.e("Kart", e.toString())
-    }
 
     protected inline fun scopeLaunch(
         context: CoroutineContext = EmptyCoroutineContext,
-        crossinline onError: (e: Exception) -> Unit = ::onError,
+        crossinline onError: (e: Exception) -> Unit ={},
         crossinline job: suspend () -> Unit,
     ): Job {
         return viewModelScope.launch(context) {

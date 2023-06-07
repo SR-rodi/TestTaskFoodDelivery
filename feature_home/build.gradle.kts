@@ -28,6 +28,7 @@ dependencies {
     implementation(project(Module.coreUi))
     implementation(project(Module.core))
     implementation(project(Module.storage))
+    implementation(project(Module.delegate))
 
     implementation(Dependencies.Navigation.fragment)
     implementation(Dependencies.Navigation.ui)

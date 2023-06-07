@@ -6,4 +6,5 @@ object Module {
     const val featureHome = ":feature_home"
     const val featureSearch = ":feature_search"
     const val featureProfile = ":feature_profile"
+    const val delegate = ":delegate"
 }

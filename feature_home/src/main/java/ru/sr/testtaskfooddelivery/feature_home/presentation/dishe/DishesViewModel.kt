@@ -32,8 +32,8 @@ class DishesViewModel(
     }
 
 
-    override fun onError(e: Exception) {
-        super.onError(e)
+     fun onError(e: Exception) {
+
         viewState = viewState.copy(isLoading = false, isError = true)
     }
 }
