@@ -25,6 +25,9 @@ android {
 }
 dependencies {
 
+    implementation(project(Module.coreUi))
+    implementation(project(Module.core))
+
     implementation (Dependencies.Navigation.fragment)
     implementation (Dependencies.Navigation.ui)
 

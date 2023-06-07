@@ -39,9 +39,23 @@ dependencies {
     implementation(project(Module.featureProfile))
     implementation(project(Module.featureHome))
     implementation(project(Module.featureSearch))
+    implementation(project(Module.storage))
 
     implementation (Dependencies.Navigation.fragment)
     implementation (Dependencies.Navigation.ui)
+
+    implementation(Dependencies.Database.room)
+
+    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation ("com.google.code.gson:gson:2.10.1")
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+
+    implementation(platform("com.squareup.okhttp3:okhttp-bom:4.11.0"))
+    implementation("com.squareup.okhttp3:okhttp")
+    implementation("com.squareup.okhttp3:logging-interceptor")
+
+    implementation( "io.insert-koin:koin-core:3.4.2")
+    implementation( "io.insert-koin:koin-android:3.4.2")
 
     implementation (Dependencies.Core.coreKtx)
     implementation (Dependencies.Core.appcompat)
