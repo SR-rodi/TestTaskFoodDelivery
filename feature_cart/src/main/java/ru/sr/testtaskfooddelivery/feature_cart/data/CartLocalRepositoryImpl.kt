@@ -12,7 +12,6 @@ class CartLocalRepositoryImpl(private val dao: CartDao) : CartLocalRepository {
     override fun getAllItems(): Flow<List<CartItemDomainModel>> {
         return dao.getAllItems().map { list ->
             list.map { entity -> entity.toDomain() }
-
         }
     }
 
