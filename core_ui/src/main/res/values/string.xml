@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="сurrency">₽</string>
+    <string name="pay">Оплатить</string>
+    <string name="g">г</string>
+</resources>

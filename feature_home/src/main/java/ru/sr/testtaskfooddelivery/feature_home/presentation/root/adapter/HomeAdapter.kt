@@ -12,8 +12,7 @@ class HomeAdapter(
     onClickCategory: (String) -> Unit = {},
     onClickDishe: (DisheUiModel) -> Unit = {},
     onClickTag: (Tag) -> Unit = {},
-) :
-    ListDelegateAdapter<HomeDisplayItem>(HomeDisplayDiffUtil()) {
+) : ListDelegateAdapter<HomeDisplayItem>(HomeDisplayDiffUtil()) {
     init {
         addDelegate(categoryDelegate(onClickCategory))
         addDelegate(disheDelegate(onClickDishe))

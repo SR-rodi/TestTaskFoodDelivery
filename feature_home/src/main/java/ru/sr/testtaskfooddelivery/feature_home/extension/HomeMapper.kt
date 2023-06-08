@@ -37,7 +37,7 @@ fun DisheDomainModel.toUi(): DisheUiModel {
 }
 
 fun DisheDomainModel.toEntity(): CartItemEntity {
-    return CartItemEntity(id, image, name, price, weight)
+    return CartItemEntity(id, image, name, price, weight,1)
 }
 
 fun DisheUiModel.toDomain(): DisheDomainModel {

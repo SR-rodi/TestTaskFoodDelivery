@@ -1,8 +1,7 @@
 <resources>
 
     <string name="addCart">Добавить в корзину</string>
-    <string name="rub">₽</string>
-    <string name="g">г</string>
+
     <string name="addMessage">Продукт добавлен в корзину</string>
     <string name="error">Error</string>
     <string name="repeat">Repeat</string>
