@@ -6,6 +6,6 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="card_background">#F8F7F5</color>
-    <color name="tab_selector">#3364E0</color>
+    <color name="button">#3364E0</color>
 
 </resources>

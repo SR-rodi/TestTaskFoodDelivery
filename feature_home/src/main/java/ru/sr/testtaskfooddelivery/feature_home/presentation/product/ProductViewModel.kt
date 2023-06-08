@@ -16,7 +16,6 @@ class ProductViewModel(
         viewState = viewState.copy(isLoading = true, isError = false)
         cartUseCase.addToCart(item.toDomain())
         viewState = viewState.copy(isLoading = false)
-
     }
 }
 

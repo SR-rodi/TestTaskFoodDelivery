@@ -19,10 +19,17 @@
         <item name="android:textColor">@color/black</item>
     </style>
 
+    <style name="Text_title_description_dishe">
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/sf_pro_display_500</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
     <style name="Text_title_dishe">
         <item name="android:textSize">14sp</item>
         <item name="android:fontFamily">@font/sf_pro_display_400</item>
         <item name="android:textColor">@color/black</item>
     </style>
+
 
 </resources>

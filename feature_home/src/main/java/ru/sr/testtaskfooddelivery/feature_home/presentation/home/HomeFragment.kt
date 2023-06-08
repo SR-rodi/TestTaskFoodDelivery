@@ -19,9 +19,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
     override fun initBinding(inflater: LayoutInflater) = FragmentHomeBinding.inflate(inflater)
 
-    private fun onClickItem(item: String) {
-        findNavController().navigate(R.id.action_blankFragment_to_categoryFragment)
-    }
+    private fun onClickItem(item: String) = findNavController()
+        .navigate(HomeFragmentDirections.actionBlankFragmentToCategoryFragment(item))
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -31,7 +30,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     }
 
     private fun stateObserver(state: HomeState) {
-        Log.e("kart", "load = ${state.isLoading} items = ${state.categories} ")
         adapter.submitList(state.categories)
     }
 }
