@@ -14,7 +14,7 @@ import ru.sr.testtaskfooddelivery.feature_home.presentation.home.state.HomeState
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
-    private val adapter by lazy { HomeAdapter(::onClickItem) }
+    private val adapter by lazy { HomeAdapter(onClickCategory = ::onClickItem) }
     private val viewModel by viewModel<HomeViewModel>()
 
     override fun initBinding(inflater: LayoutInflater) = FragmentHomeBinding.inflate(inflater)
@@ -31,7 +31,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     }
 
     private fun stateObserver(state: HomeState) {
-        Log.e("kart","load = ${state.isLoading} items = ${state.categories} ")
+        Log.e("kart", "load = ${state.isLoading} items = ${state.categories} ")
         adapter.submitList(state.categories)
     }
 }

@@ -6,7 +6,7 @@ data class DisheDto(
     val description: String,
     val id: Int,
     @SerializedName("image_url")
-    val imageUrl: String,
+    val imageUrl: String?,
     val name: String,
     val price: Int,
     @SerializedName("tegs")
