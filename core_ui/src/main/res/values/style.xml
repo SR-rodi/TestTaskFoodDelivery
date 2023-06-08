@@ -8,7 +8,7 @@
     </style>
 
     <style name="Text_subtitle_toolbar">
-        <item name="android:textSize">18sp</item>
+        <item name="android:textSize">14sp</item>
         <item name="android:fontFamily">@font/sf_pro_display_500</item>
         <item name="android:textColor">@color/black_50</item>
     </style>

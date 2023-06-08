@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">TestTaskFoodDelivery</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="bottom_nav_home">Главня</string>
+    <string name="bottom_nav_search">Поиск</string>
+    <string name="bottom_nav_cart">Корзина</string>
+    <string name="bottom_nav_profile">Аккаунт</string>
 </resources>

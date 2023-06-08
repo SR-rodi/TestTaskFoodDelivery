@@ -34,7 +34,7 @@ class CartFragment : BaseFragment<FragmentCartBinding>() {
     @SuppressLint("SetTextI18n")
     fun stateObserver(state: CartState) {
         binding.payButton.text =
-            resources.getString(R.string.сurrency) +
+            resources.getString(R.string.pay) +
                     " " + state.allPrice +
                     " " + resources.getString(R.string.сurrency)
 
