@@ -78,7 +78,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="8dp"
-                android:text="@string/rub"
+                android:text="@string/сurrency"
                 android:textSize="14sp" />
 
             <TextView

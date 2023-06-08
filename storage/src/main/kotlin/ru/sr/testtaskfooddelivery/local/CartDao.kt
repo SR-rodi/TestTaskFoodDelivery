@@ -13,11 +13,11 @@ interface CartDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insert(item: CartItemEntity)
 
-    @Update
+    @Update(entity = CartItemEntity::class)
     suspend fun update(item: CartItemEntity)
 
     @Query("SELECT * FROM cart")
-    fun getAllItems(): Flow<CartItemEntity>
+    fun getAllItems(): Flow<List<CartItemEntity>>
 
     @Query("SELECT name FROM cart WHERE dishe_id = :id")
     fun getItemById(id: Int): String?
