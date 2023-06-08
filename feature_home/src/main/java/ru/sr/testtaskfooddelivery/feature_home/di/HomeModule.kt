@@ -8,9 +8,11 @@ import ru.sr.testtaskfooddelivery.feature_home.data.repository.LocalHomeReposito
 import ru.sr.testtaskfooddelivery.feature_home.data.repository.RemoteStoreHomeRepositoryImpl
 import ru.sr.testtaskfooddelivery.feature_home.domain.repository.LocalHomeRepository
 import ru.sr.testtaskfooddelivery.feature_home.domain.repository.RemoteStoreHomeRepository
+import ru.sr.testtaskfooddelivery.feature_home.domain.usecase.CartHomeContainItemUseCase
 import ru.sr.testtaskfooddelivery.feature_home.domain.usecase.CartHomeUseCase
 import ru.sr.testtaskfooddelivery.feature_home.domain.usecase.CategoriesHomeUseCase
 import ru.sr.testtaskfooddelivery.feature_home.domain.usecase.DishesHomeUseCase
+import ru.sr.testtaskfooddelivery.feature_home.domain.usecase.impl.CartHomeContainItemUseCaseImpl
 import ru.sr.testtaskfooddelivery.feature_home.domain.usecase.impl.CartHomeUseCaseImpl
 import ru.sr.testtaskfooddelivery.feature_home.domain.usecase.impl.CategoriesHomeUseCaseImpl
 import ru.sr.testtaskfooddelivery.feature_home.domain.usecase.impl.DishesHomeUseCaseImpl
@@ -29,6 +31,8 @@ internal fun useCaseModule() = module {
     singleOf(::DishesHomeUseCaseImpl) { bind<DishesHomeUseCase>() }
     singleOf(::CategoriesHomeUseCaseImpl) { bind<CategoriesHomeUseCase>() }
     singleOf(::CartHomeUseCaseImpl) { bind<CartHomeUseCase>() }
+    singleOf(::CartHomeContainItemUseCaseImpl) { bind<CartHomeContainItemUseCase
+            >() }
 }
 
 internal fun homeViewModelModule() = module {

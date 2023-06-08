@@ -7,11 +7,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import androidx.core.view.isVisible
 import androidx.fragment.app.DialogFragment
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.navArgs
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import ru.sr.testtaskfooddelivery.feature_home.databinding.DialogFragmentProductBinding
 import ru.sr.testtaskfooddelivery.feature_home.presentation.dishe.model.DisheUiModel
+import ru.sr.testtaskfooddelivery.feature_home.presentation.product.state.ProductState
 import ru.sr.testtaskfooddelivery.loadImage
 
 class ProductDialogFragment : DialogFragment() {
@@ -43,8 +49,18 @@ class ProductDialogFragment : DialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
+        viewModel.checkItemInCart(args.product.id)
         bind(args.product)
+        stateObserver(viewModel.viewStates())
+    }
+
+    private fun stateObserver(viewStates: StateFlow<ProductState>) {
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewStates.collect { state ->
+                binding.productMessage.isVisible = state.isContain
+                binding.addButton.isEnabled = !state.isContain
+            }
+        }
     }
 
     private fun bind(item: DisheUiModel) = binding.apply {

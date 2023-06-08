@@ -9,4 +9,8 @@ class LocalHomeRepositoryImpl(private val dao: CartDao) : LocalHomeRepository {
     override suspend fun addItemToCart(item: DisheDomainModel) {
         dao.insert(item.toEntity())
     }
+
+    override suspend fun itemContain(id: Int): Boolean {
+        return dao.getItemById(id) != null
+    }
 }

@@ -1,5 +1,6 @@
 package ru.sr.testtaskfooddelivery.feature_home.presentation.dishe
 
+import android.util.Log
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 import ru.sr.testtaskfooddelivery.base.BaseViewModel
@@ -24,7 +25,7 @@ class DishesViewModel(
         getAllDishes()
     }
 
-    private fun getAllDishes() = viewModelScope.launch(dispatcher.io) {
+    fun getAllDishes() = scopeLaunch(context = dispatcher.io, onError = ::onError) {
         viewState = viewState.copy(isLoading = true, isError = false)
         allDishes = dishesUseCase.getAll().map { domainModel -> domainModel.toUi() }
         viewState = viewState.copy(dishes = allDishes)
@@ -32,9 +33,8 @@ class DishesViewModel(
     }
 
     fun getDishesByTag(tag: Tag) {
-
         val items = allDishes.filter { model -> model.listTeg.contains(tag.disheTag.tag) }
-        viewState = viewState.copy(dishes = items,tags = selectorTags(tag.id))
+        viewState = viewState.copy(dishes = items, tags = selectorTags(tag.id))
     }
 
     private fun createTagsList(): List<Tag> {
@@ -44,7 +44,7 @@ class DishesViewModel(
         return tags
     }
 
-    private fun selectorTags(newSelectorId:Int): List<Tag> {
+    private fun selectorTags(newSelectorId: Int): List<Tag> {
         val tags = viewState.tags.toMutableList()
         tags[tagSelectorId] = tags[tagSelectorId].copy(isSelected = false)
         tags[newSelectorId] = tags[newSelectorId].copy(isSelected = true)
@@ -52,8 +52,8 @@ class DishesViewModel(
         return tags
     }
 
-    fun onError(e: Exception) {
-
+    private fun onError(e: Exception) {
+        Log.e("Kart", e.toString())
         viewState = viewState.copy(isLoading = false, isError = true)
     }
 }

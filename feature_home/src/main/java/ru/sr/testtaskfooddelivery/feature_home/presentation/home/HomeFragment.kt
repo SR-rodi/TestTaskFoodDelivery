@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
+import androidx.core.view.isVisible
 import androidx.navigation.fragment.findNavController
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import ru.sr.testtaskfooddelivery.base.BaseFragment
@@ -27,9 +28,16 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         binding.homeRecyclerView.adapter = adapter
         flowObserver(viewModel.viewStates()) { state -> stateObserver(state) }
 
+        binding.error.repeatButton.setOnClickListener {
+            viewModel.getCategories()
+        }
     }
 
     private fun stateObserver(state: HomeState) {
         adapter.submitList(state.categories)
+        binding.apply {
+            progressBar.isVisible = state.isLoading
+            error.network.isVisible = state.isError
+        }
     }
 }

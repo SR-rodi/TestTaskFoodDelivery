@@ -18,7 +18,7 @@ class HomeViewModel(
         getCategories()
     }
 
-    private fun getCategories() = scopeLaunch(
+    fun getCategories() = scopeLaunch(
         context = dispatcher.io, onError = ::onError
     ) {
         viewState = viewState.copy(isLoading = true, isError = false)
