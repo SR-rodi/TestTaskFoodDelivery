@@ -29,4 +29,5 @@ dependencies {
     implementation (Dependencies.Core.material)
     implementation (Dependencies.Core.constraintlayout)
     implementation (Dependencies.Core.lifecycle)
+    implementation (Dependencies.Core.viewmodel)
 }

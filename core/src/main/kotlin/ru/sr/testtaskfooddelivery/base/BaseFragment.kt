@@ -27,7 +27,6 @@ abstract class BaseFragment<B : ViewBinding> : Fragment() {
         return binding.root
     }
 
-
     protected fun <I : Any?> flowObserver(flow: Flow<I>?, action: suspend (it: I) -> Unit) =
         viewLifecycleOwner.lifecycleScope.launch {
             flow?.collect {

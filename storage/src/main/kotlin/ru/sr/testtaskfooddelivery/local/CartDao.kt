@@ -19,6 +19,9 @@ interface CartDao {
     @Query("SELECT * FROM cart")
     fun getAllItems(): Flow<CartItemEntity>
 
+    @Query("SELECT name FROM cart WHERE dishe_id = :id")
+    fun getItemById(id: Int): String?
+
     @Query("DELETE FROM cart WHERE dishe_id = :id")
     suspend fun delete(id: Int)
 
