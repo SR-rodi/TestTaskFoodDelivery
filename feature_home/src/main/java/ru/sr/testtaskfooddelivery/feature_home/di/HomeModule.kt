@@ -31,8 +31,7 @@ internal fun useCaseModule() = module {
     singleOf(::DishesHomeUseCaseImpl) { bind<DishesHomeUseCase>() }
     singleOf(::CategoriesHomeUseCaseImpl) { bind<CategoriesHomeUseCase>() }
     singleOf(::CartHomeUseCaseImpl) { bind<CartHomeUseCase>() }
-    singleOf(::CartHomeContainItemUseCaseImpl) { bind<CartHomeContainItemUseCase
-            >() }
+    singleOf(::CartHomeContainItemUseCaseImpl) { bind<CartHomeContainItemUseCase>() }
 }
 
 internal fun homeViewModelModule() = module {

@@ -17,4 +17,3 @@ fun categoryDelegate(onClickItem: (String) -> Unit) =
             binding.title.text = item.name
         }
     }
-

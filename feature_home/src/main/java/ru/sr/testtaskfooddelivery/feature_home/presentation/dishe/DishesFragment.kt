@@ -1,12 +1,10 @@
 package ru.sr.testtaskfooddelivery.feature_home.presentation.dishe
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import androidx.core.view.isVisible
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.fragment.navArgs
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import ru.sr.testtaskfooddelivery.base.BaseFragment
 import ru.sr.testtaskfooddelivery.feature_home.databinding.FragmentDishesBinding
@@ -18,7 +16,6 @@ import ru.sr.testtaskfooddelivery.feature_home.presentation.root.adapter.HomeAda
 class DishesFragment : BaseFragment<FragmentDishesBinding>() {
 
     private val viewModel by viewModel<DishesViewModel>()
-    private val args by navArgs<DishesFragmentArgs>()
 
     private val dishAdapter by lazy { HomeAdapter(onClickDishe = ::onClickDishe) }
     private val tagsAdapter by lazy { HomeAdapter(onClickTag = ::onClickTag) }
@@ -34,7 +31,6 @@ class DishesFragment : BaseFragment<FragmentDishesBinding>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        Log.e("Kart", "category = ${args.categoryName}")
         bindAdapter()
         flowObserver(viewModel.viewStates()) { state -> stateObserver(state) }
 

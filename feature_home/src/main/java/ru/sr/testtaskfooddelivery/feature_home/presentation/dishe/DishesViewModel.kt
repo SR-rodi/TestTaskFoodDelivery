@@ -1,8 +1,6 @@
 package ru.sr.testtaskfooddelivery.feature_home.presentation.dishe
 
 import android.util.Log
-import androidx.lifecycle.viewModelScope
-import kotlinx.coroutines.launch
 import ru.sr.testtaskfooddelivery.base.BaseViewModel
 import ru.sr.testtaskfooddelivery.feature_home.data.DisheTag
 import ru.sr.testtaskfooddelivery.feature_home.domain.usecase.DishesHomeUseCase
@@ -19,7 +17,6 @@ class DishesViewModel(
 
     private var allDishes = emptyList<DisheUiModel>()
     private var tagSelectorId = 0
-
 
     init {
         getAllDishes()

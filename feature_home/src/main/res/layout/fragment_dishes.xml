@@ -11,8 +11,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:visibility="gone"
-        android:indeterminateTint="@color/blue" />
+        android:indeterminateTint="@color/blue"
+        android:visibility="gone" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -31,9 +31,9 @@
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/home_item_tag" />
 
-        <include android:id="@+id/error"
-            layout="@layout/error_item"/>
-
+        <include
+            android:id="@+id/error"
+            layout="@layout/error_item" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/dishes_recyclerView"
@@ -44,6 +44,5 @@
             app:spanCount="3"
             tools:listitem="@layout/home_item_dishe" />
     </LinearLayout>
-
 
 </FrameLayout>

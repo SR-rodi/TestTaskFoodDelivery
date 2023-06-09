@@ -13,5 +13,5 @@ class CartItemEntity(
     val name: String,
     val price: Int,
     val weight: Int,
-    val counter:Int
+    val counter: Int,
 )

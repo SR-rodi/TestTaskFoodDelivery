@@ -6,4 +6,3 @@ import java.util.Date
 class LocationDateWrapperImpl : LocationDateWrapper {
     override val date = Date()
 }
-

@@ -11,7 +11,7 @@ abstract class ListDelegateAdapter<Interface>(
 
     private val delegateManager = AdaptersDelegateManager<Interface>()
 
-    fun addDelegate(delegate: AdapterDelegate<Interface, >) {
+    fun addDelegate(delegate: AdapterDelegate<Interface>) {
         delegateManager.addDelegate(delegate)
     }
 

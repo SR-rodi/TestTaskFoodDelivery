@@ -2,12 +2,11 @@ package ru.sr.testtaskfooddelivery.feature_location.data
 
 import android.annotation.SuppressLint
 import android.os.Looper
-import android.util.Log
 import com.google.android.gms.location.LocationRequest
 import com.google.android.gms.location.Priority
+import ru.sr.testtaskfooddelivery.feature_location.domain.repository.LocationRepository
 import ru.sr.testtaskfooddelivery.feature_location.domain.wrapper.DateProvider
 import ru.sr.testtaskfooddelivery.feature_location.domain.wrapper.FusedClient
-import ru.sr.testtaskfooddelivery.feature_location.domain.repository.LocationRepository
 
 internal class LocationRepositoryImpl(
     private val fusedClient: FusedClient,
@@ -35,5 +34,9 @@ internal class LocationRepositoryImpl(
             userLocationCallBack,
             Looper.getMainLooper()
         )
+    }
+
+    override fun removeFusedClient() {
+        fusedClient.client.removeLocationUpdates(userLocationCallBack)
     }
 }

@@ -30,4 +30,3 @@ fun tagDelegate(onClickItem: (Tag) -> Unit) =
             binding.tag.isSelected = item.isSelected
         }
     }
-

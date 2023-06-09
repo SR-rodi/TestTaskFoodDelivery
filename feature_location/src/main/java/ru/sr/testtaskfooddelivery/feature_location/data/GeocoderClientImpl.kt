@@ -6,7 +6,5 @@ import ru.sr.testtaskfooddelivery.feature_location.domain.wrapper.GeocoderClient
 import java.util.Locale
 
 internal class GeocoderClientImpl(context: Context) : GeocoderClient {
-
     override val client = Geocoder(context, Locale.getDefault())
-
 }

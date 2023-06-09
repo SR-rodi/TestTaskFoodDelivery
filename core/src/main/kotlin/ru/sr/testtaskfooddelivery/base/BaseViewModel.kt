@@ -1,6 +1,5 @@
 package ru.sr.testtaskfooddelivery.base
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Job
@@ -25,7 +24,7 @@ abstract class BaseViewModel<State : Any>(initialState: State) : ViewModel() {
 
     protected inline fun scopeLaunch(
         context: CoroutineContext = EmptyCoroutineContext,
-        crossinline onError: (e: Exception) -> Unit ={},
+        crossinline onError: (e: Exception) -> Unit = {},
         crossinline job: suspend () -> Unit,
     ): Job {
         return viewModelScope.launch(context) {

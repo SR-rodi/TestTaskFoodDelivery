@@ -1,13 +1,13 @@
 package ru.sr.testtaskfooddelivery.feature_location.data
 
-import android.util.Log
 import com.google.android.gms.location.LocationCallback
 import com.google.android.gms.location.LocationResult
 import ru.sr.testtaskfooddelivery.feature_location.domain.wrapper.GeocoderClient
 import ru.sr.testtaskfooddelivery.feature_location.domain.wrapper.PositionCallBack
 
-internal class UserLocationCallBack(private val geocoder: GeocoderClient) : LocationCallback(),
-    PositionCallBack {
+internal class UserLocationCallBack(
+    private val geocoder: GeocoderClient,
+) : LocationCallback(), PositionCallBack {
 
     private var lat: Double? = null
     private var lon: Double? = null
@@ -17,10 +17,10 @@ internal class UserLocationCallBack(private val geocoder: GeocoderClient) : Loca
         lon = result.lastLocation?.longitude
     }
 
+    @Suppress("DEPRECATION")
     override fun getPosition(): String {
         if (lat == null && lon == null) return ""
         val address = geocoder.client.getFromLocation(lat!!, lon!!, 1)?.last()?.locality
         return address.toString()
     }
-
 }

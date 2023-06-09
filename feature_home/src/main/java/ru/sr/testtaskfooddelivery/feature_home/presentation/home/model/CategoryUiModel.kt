@@ -6,4 +6,4 @@ class CategoryUiModel(
     override val id: Int,
     val image: String,
     val name: String,
-): HomeDisplayItem
+) : HomeDisplayItem

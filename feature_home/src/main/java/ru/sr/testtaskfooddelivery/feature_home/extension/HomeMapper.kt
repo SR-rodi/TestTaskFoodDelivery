@@ -21,7 +21,7 @@ fun CategoryDto.toDomain(): CategoryDomainModel {
 fun DisheDto.toDomain(): DisheDomainModel {
     /** в ответе от сервера item под 4 id приходит с отсутствующим полем imageUrl а в поле  description
      * приходит ссылка на картинку*/
-    return DisheDomainModel(description, id, imageUrl?:description, name, price, listTeg, weight)
+    return DisheDomainModel(description, id, imageUrl ?: description, name, price, listTeg, weight)
 }
 
 fun DishesDto.toDomain(): List<DisheDomainModel> {
@@ -37,7 +37,7 @@ fun DisheDomainModel.toUi(): DisheUiModel {
 }
 
 fun DisheDomainModel.toEntity(): CartItemEntity {
-    return CartItemEntity(id, image, name, price, weight,1)
+    return CartItemEntity(id, image, name, price, weight, 1)
 }
 
 fun DisheUiModel.toDomain(): DisheDomainModel {

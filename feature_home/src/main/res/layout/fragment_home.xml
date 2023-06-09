@@ -22,7 +22,8 @@
         android:indeterminateTint="@color/blue"
         android:visibility="gone" />
 
-    <include android:id="@+id/error"
-        layout="@layout/error_item"/>
+    <include
+        android:id="@+id/error"
+        layout="@layout/error_item" />
 
 </FrameLayout>

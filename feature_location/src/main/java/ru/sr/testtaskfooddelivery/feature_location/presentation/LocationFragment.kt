@@ -12,7 +12,6 @@ import androidx.navigation.fragment.findNavController
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import ru.sr.testtaskfooddelivery.SetToolbar
 import ru.sr.testtaskfooddelivery.base.BaseFragment
-import ru.sr.testtaskfooddelivery.feature_location.R
 import ru.sr.testtaskfooddelivery.feature_location.databinding.FragmentLocationBinding
 
 class LocationFragment : BaseFragment<FragmentLocationBinding>() {
@@ -54,6 +53,11 @@ class LocationFragment : BaseFragment<FragmentLocationBinding>() {
             }) {
             viewModel.getPosition()
         } else launcher.launch(PERMISSIONS)
+    }
+
+    override fun onDestroy() {
+        viewModel.removeLocation()
+        super.onDestroy()
     }
 
     private companion object {
