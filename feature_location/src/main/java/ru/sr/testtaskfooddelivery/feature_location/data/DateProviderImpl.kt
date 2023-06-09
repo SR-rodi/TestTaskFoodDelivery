@@ -11,7 +11,10 @@ class DateProviderImpl(
 
     @SuppressLint("SimpleDateFormat")
     override fun getDate(): String {
-        val simpleDateFormat = SimpleDateFormat("dd MMMM,yyyy")
-        return simpleDateFormat.format(locationDateWrapper.date)
+        val simpleDateFormat = SimpleDateFormat("dd MMMM, yyyy")
+        val currentDate = simpleDateFormat.format(locationDateWrapper.date)
+        return currentDate.take(3) +
+                currentDate.takeLast(currentDate.length - 3)
+                    .replaceFirstChar { it.uppercaseChar() }
     }
 }

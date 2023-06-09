@@ -1,6 +1,8 @@
 package ru.sr.testtaskfooddelivery.feature_location.presentation
 
+import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import ru.sr.testtaskfooddelivery.base.BaseViewModel
 import ru.sr.testtaskfooddelivery.feature_location.domain.usecase.LocationUseCase
 import ru.sr.testtaskfooddelivery.feature_location.mapper.toUi
@@ -13,7 +15,7 @@ class LocationViewModel(
 
     fun getPosition() {
         var counter = 0
-        scopeLaunch(dispatcher.io) {
+       viewModelScope.launch(dispatcher.io) {
             var userDate = locationUseCase.getUserData()
             while (userDate.cityName == "" && counter <= MAX_COUNTER) {
                 userDate = locationUseCase.getUserData()

@@ -5,12 +5,14 @@ import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import androidx.navigation.fragment.findNavController
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import ru.sr.testtaskfooddelivery.SetToolbar
 import ru.sr.testtaskfooddelivery.base.BaseFragment
+import ru.sr.testtaskfooddelivery.feature_location.R
 import ru.sr.testtaskfooddelivery.feature_location.databinding.FragmentLocationBinding
 
 class LocationFragment : BaseFragment<FragmentLocationBinding>() {
@@ -30,7 +32,16 @@ class LocationFragment : BaseFragment<FragmentLocationBinding>() {
         super.onViewCreated(view, savedInstanceState)
         checkPermission()
         flowObserver(viewModel.viewStates()) { state ->
-            (activity as? SetToolbar)?.setTitle(state.userPosition.cityName, state.userPosition.date)
+            (activity as? SetToolbar)?.setTitle(
+                state.userPosition.cityName,
+                state.userPosition.date
+            )
+            if (state.isErrorLocation)
+                Toast.makeText(
+                    requireContext(),
+                    resources.getString(ru.sr.testtaskfooddelivery.core_ui.R.string.error_location),
+                    Toast.LENGTH_SHORT
+                ).show()
             if (state.isNavigate) findNavController().popBackStack()
         }
     }

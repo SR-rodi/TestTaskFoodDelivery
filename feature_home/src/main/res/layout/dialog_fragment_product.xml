@@ -12,11 +12,14 @@
         android:layout_margin="16dp"
         android:background="@drawable/bg_dialog"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:padding="16dp"
+        tools:ignore="UselessParent">
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="232dp"
+            app:cardElevation="0dp"
+            android:elevation="0dp"
             android:backgroundTint="@color/card_background"
             app:cardCornerRadius="10dp">
 
@@ -28,7 +31,8 @@
                 android:layout_gravity="center"
                 android:scaleX="0.87"
                 android:scaleY="0.87"
-                tools:src="@tools:sample/backgrounds/scenic" />
+                tools:src="@tools:sample/backgrounds/scenic"
+                android:importantForAccessibility="no" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -40,11 +44,18 @@
                     style="@style/Widget.App.Button.Icon"
                     android:layout_width='40dp'
                     android:layout_height="40dp"
-                    android:src="@drawable/ic_favorite_button" />
+                    android:background="@drawable/bg_item_button"
+                    android:src="@drawable/ic_favorite_button"
+                    android:importantForAccessibility="no" />
+
+                <Space
+                    android:layout_width="8dp"
+                    android:layout_height="wrap_content"/>
 
                 <ImageButton
                     android:id="@+id/closeButton"
                     style="@style/Widget.App.Button.Icon"
+                    android:background="@drawable/bg_item_button"
                     android:layout_width='40dp'
                     android:layout_height="40dp"
                     android:src="@drawable/ic_close_button" />

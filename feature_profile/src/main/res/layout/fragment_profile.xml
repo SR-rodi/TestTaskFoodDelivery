@@ -6,8 +6,12 @@
     tools:context=".ProfileFragment">
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Проифиль" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Профиль"
+        android:layout_gravity="center"
+        android:textSize="45sp"
+        android:textColor="#000"
+        tools:ignore="HardcodedText" />
 
 </FrameLayout>
