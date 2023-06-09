@@ -1,6 +1,5 @@
 package ru.sr.testtaskfooddelivery.feature_location.presentation
 
-import android.util.Log
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
