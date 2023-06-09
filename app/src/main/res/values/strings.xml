@@ -1,9 +1,8 @@
 <resources>
     <string name="app_name">TestTaskFoodDelivery</string>
-    <string name="bottom_nav_home">Главня</string>
+    <string name="bottom_nav_home">Главная</string>
     <string name="bottom_nav_search">Поиск</string>
     <string name="bottom_nav_cart">Корзина</string>
     <string name="bottom_nav_profile">Аккаунт</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>

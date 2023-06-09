@@ -68,6 +68,7 @@ class ProductDialogFragment : DialogFragment() {
         productDescription.text = item.description
         productPrice.text = item.price.toString()
         productWeight.text = item.weight.toString()
+        productName.text = item.name
 
         closeButton.setOnClickListener {
             dismiss()
