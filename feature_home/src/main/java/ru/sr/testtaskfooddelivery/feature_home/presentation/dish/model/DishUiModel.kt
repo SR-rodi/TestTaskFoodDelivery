@@ -1,11 +1,11 @@
-package ru.sr.testtaskfooddelivery.feature_home.presentation.dishe.model
+package ru.sr.testtaskfooddelivery.feature_home.presentation.dish.model
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 import ru.sr.testtaskfooddelivery.feature_home.presentation.root.HomeDisplayItem
 
 @Parcelize
-class DisheUiModel(
+class DishUiModel(
     val description: String,
     override val id: Int,
     val imageUrl: String,

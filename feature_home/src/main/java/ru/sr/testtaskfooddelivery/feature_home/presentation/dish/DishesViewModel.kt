@@ -1,13 +1,13 @@
-package ru.sr.testtaskfooddelivery.feature_home.presentation.dishe
+package ru.sr.testtaskfooddelivery.feature_home.presentation.dish
 
 import android.util.Log
 import ru.sr.testtaskfooddelivery.base.BaseViewModel
-import ru.sr.testtaskfooddelivery.feature_home.data.DisheTag
+import ru.sr.testtaskfooddelivery.feature_home.data.DishTag
 import ru.sr.testtaskfooddelivery.feature_home.domain.usecase.DishesHomeUseCase
 import ru.sr.testtaskfooddelivery.feature_home.extension.toUi
-import ru.sr.testtaskfooddelivery.feature_home.presentation.dishe.model.DisheUiModel
-import ru.sr.testtaskfooddelivery.feature_home.presentation.dishe.model.Tag
-import ru.sr.testtaskfooddelivery.feature_home.presentation.dishe.state.DishesState
+import ru.sr.testtaskfooddelivery.feature_home.presentation.dish.model.DishUiModel
+import ru.sr.testtaskfooddelivery.feature_home.presentation.dish.model.Tag
+import ru.sr.testtaskfooddelivery.feature_home.presentation.dish.state.DishesState
 import ru.sr.testtaskfooddelivery.wrapper.DispatcherWrapper
 
 class DishesViewModel(
@@ -15,7 +15,7 @@ class DishesViewModel(
     private val dishesUseCase: DishesHomeUseCase,
 ) : BaseViewModel<DishesState>(DishesState()) {
 
-    private var allDishes = emptyList<DisheUiModel>()
+    private var allDishes = emptyList<DishUiModel>()
     private var tagSelectorId = 0
 
     init {
@@ -30,12 +30,12 @@ class DishesViewModel(
     }
 
     fun getDishesByTag(tag: Tag) {
-        val items = allDishes.filter { model -> model.listTeg.contains(tag.disheTag.tag) }
+        val items = allDishes.filter { model -> model.listTeg.contains(tag.dishTag.tag) }
         viewState = viewState.copy(dishes = items, tags = selectorTags(tag.id))
     }
 
     private fun createTagsList(): List<Tag> {
-        val tags = DisheTag.values().map { disheTag -> Tag(disheTag, id = disheTag.ordinal) }
+        val tags = DishTag.values().map { disheTag -> Tag(disheTag, id = disheTag.ordinal) }
             .toMutableList()
         tags[tagSelectorId] = tags[tagSelectorId].copy(isSelected = true)
         return tags

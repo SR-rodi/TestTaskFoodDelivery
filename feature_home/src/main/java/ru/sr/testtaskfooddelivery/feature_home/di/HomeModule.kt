@@ -16,7 +16,7 @@ import ru.sr.testtaskfooddelivery.feature_home.domain.usecase.impl.CartHomeConta
 import ru.sr.testtaskfooddelivery.feature_home.domain.usecase.impl.CartHomeUseCaseImpl
 import ru.sr.testtaskfooddelivery.feature_home.domain.usecase.impl.CategoriesHomeUseCaseImpl
 import ru.sr.testtaskfooddelivery.feature_home.domain.usecase.impl.DishesHomeUseCaseImpl
-import ru.sr.testtaskfooddelivery.feature_home.presentation.dishe.DishesViewModel
+import ru.sr.testtaskfooddelivery.feature_home.presentation.dish.DishesViewModel
 import ru.sr.testtaskfooddelivery.feature_home.presentation.home.HomeViewModel
 import ru.sr.testtaskfooddelivery.feature_home.presentation.product.ProductViewModel
 

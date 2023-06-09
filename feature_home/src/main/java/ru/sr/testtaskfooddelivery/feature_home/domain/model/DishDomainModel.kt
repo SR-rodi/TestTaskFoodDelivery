@@ -1,6 +1,6 @@
 package ru.sr.testtaskfooddelivery.feature_home.domain.model
 
-class DisheDomainModel(
+class DishDomainModel(
     val description: String,
     val id: Int,
     val image: String,

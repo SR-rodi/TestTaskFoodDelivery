@@ -1,4 +1,4 @@
-package ru.sr.testtaskfooddelivery.feature_home.presentation.dishe
+package ru.sr.testtaskfooddelivery.feature_home.presentation.dish
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,9 +8,9 @@ import androidx.navigation.fragment.findNavController
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import ru.sr.testtaskfooddelivery.base.BaseFragment
 import ru.sr.testtaskfooddelivery.feature_home.databinding.FragmentDishesBinding
-import ru.sr.testtaskfooddelivery.feature_home.presentation.dishe.model.DisheUiModel
-import ru.sr.testtaskfooddelivery.feature_home.presentation.dishe.model.Tag
-import ru.sr.testtaskfooddelivery.feature_home.presentation.dishe.state.DishesState
+import ru.sr.testtaskfooddelivery.feature_home.presentation.dish.model.DishUiModel
+import ru.sr.testtaskfooddelivery.feature_home.presentation.dish.model.Tag
+import ru.sr.testtaskfooddelivery.feature_home.presentation.dish.state.DishesState
 import ru.sr.testtaskfooddelivery.feature_home.presentation.root.adapter.HomeAdapter
 
 class DishesFragment : BaseFragment<FragmentDishesBinding>() {
@@ -20,7 +20,7 @@ class DishesFragment : BaseFragment<FragmentDishesBinding>() {
     private val dishAdapter by lazy { HomeAdapter(onClickDishe = ::onClickDishe) }
     private val tagsAdapter by lazy { HomeAdapter(onClickTag = ::onClickTag) }
 
-    private fun onClickDishe(item: DisheUiModel) = findNavController()
+    private fun onClickDishe(item: DishUiModel) = findNavController()
         .navigate(DishesFragmentDirections.actionCategoryFragmentToProductDialogFragment(item))
 
     private fun onClickTag(tag: Tag) {
