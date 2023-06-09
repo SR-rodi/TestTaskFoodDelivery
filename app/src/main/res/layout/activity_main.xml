@@ -9,6 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:layout_marginHorizontal="16dp"
+        android:id="@+id/toolbar"
         android:layout_marginBottom="8dp">
 
         <ImageView
@@ -40,7 +41,7 @@
                 style="@style/Text_title_toolbar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Волгоград" />
+                />
 
             <TextView
                 android:id="@+id/city_date"

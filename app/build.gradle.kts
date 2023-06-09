@@ -41,11 +41,14 @@ dependencies {
     implementation(project(Module.featureSearch))
     implementation(project(Module.storage))
     implementation(project(Module.core))
+    implementation(project(":feature_location"))
 
     implementation (Dependencies.Navigation.fragment)
     implementation (Dependencies.Navigation.ui)
 
     implementation(Dependencies.Database.room)
+
+    implementation ("com.google.android.gms:play-services-location:21.0.1")
 
     implementation ("com.squareup.retrofit2:retrofit:2.9.0")
     implementation ("com.google.code.gson:gson:2.10.1")
