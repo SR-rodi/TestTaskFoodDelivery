@@ -21,7 +21,7 @@ android {
 
 }
 dependencies {
-    implementation ("com.github.bumptech.glide:glide:4.15.1")
 
     implementation (Dependencies.Core.material)
+    implementation (Dependencies.Image.glide)
 }

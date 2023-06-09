@@ -8,7 +8,8 @@ import androidx.room.RoomDatabase
 @Database(
     entities = [
         CartItemEntity::class
-    ], version = 1
+    ],
+    version = 1
 )
 abstract class StoreDatabase : RoomDatabase() {
 

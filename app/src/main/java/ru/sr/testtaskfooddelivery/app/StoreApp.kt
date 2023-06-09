@@ -12,7 +12,6 @@ class StoreApp : Application() {
 
     override fun onCreate() {
         super.onCreate()
-
         startKoin {
             androidContext(this@StoreApp)
             modules(appModule() + homeModule() + cartModule() + locationModule())

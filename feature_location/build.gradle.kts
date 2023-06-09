@@ -26,13 +26,17 @@ android {
 dependencies {
     implementation(project(Module.core))
     implementation(project(Module.coreUi))
+
     implementation (Dependencies.Navigation.fragment)
     implementation (Dependencies.Navigation.ui)
+
     implementation(Dependencies.Di.koinCore)
     implementation(Dependencies.Di.koinAndroid)
     implementation(Dependencies.Di.koinCore)
     implementation(Dependencies.Di.koinAndroid)
-    implementation ("com.google.android.gms:play-services-location:21.0.1")
-    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.1")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1")
+
+    implementation(Dependencies.Location.playServis)
+
+    implementation(Dependencies.Core.viewmodel)
+    implementation(Dependencies.Core.lifecycle)
 }

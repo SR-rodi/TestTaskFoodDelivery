@@ -39,25 +39,22 @@ dependencies {
     implementation(project(Module.featureProfile))
     implementation(project(Module.featureHome))
     implementation(project(Module.featureSearch))
+    implementation(project(Module.featureLocation))
     implementation(project(Module.storage))
     implementation(project(Module.core))
-    implementation(project(":feature_location"))
 
     implementation (Dependencies.Navigation.fragment)
     implementation (Dependencies.Navigation.ui)
 
     implementation(Dependencies.Database.room)
 
-    implementation ("com.google.android.gms:play-services-location:21.0.1")
-    implementation ("androidx.core:core-splashscreen:1.0.1")
-
-    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation ("com.google.code.gson:gson:2.10.1")
-    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
-
-    implementation(platform("com.squareup.okhttp3:okhttp-bom:4.11.0"))
-    implementation("com.squareup.okhttp3:okhttp")
-    implementation("com.squareup.okhttp3:logging-interceptor")
+    implementation(platform(Dependencies.Network.okHttpBom))
+    implementation(Dependencies.Network.okHttp)
+    implementation(Dependencies.Network.okHttpLogging)
+    implementation(Dependencies.Network.retofit)
+    implementation(Dependencies.Network.retofitConverter)
+    implementation(Dependencies.Network.gson)
+    implementation(Dependencies.SplashScreen.splashScreen)
 
     implementation( Dependencies.Di.koinCore)
     implementation( Dependencies.Di.koinAndroid)
