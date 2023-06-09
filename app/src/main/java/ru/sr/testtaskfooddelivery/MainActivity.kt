@@ -3,6 +3,7 @@ package ru.sr.testtaskfooddelivery
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.isVisible
 import androidx.navigation.NavOptions
 import androidx.navigation.fragment.NavHostFragment
@@ -22,6 +23,8 @@ class MainActivity : AppCompatActivity(), SetToolbar {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        installSplashScreen()
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -36,8 +39,10 @@ class MainActivity : AppCompatActivity(), SetToolbar {
     private fun addDestinationListener() {
         navController.addOnDestinationChangedListener { _, destination, bundle ->
 
-                binding.toolbar.isVisible = destination.id != ru.sr.testtaskfooddelivery.core.R.id.locationFragment
-                binding.bottomNavView.isVisible = destination.id != ru.sr.testtaskfooddelivery.core.R.id.locationFragment
+            binding.toolbar.isVisible =
+                destination.id != ru.sr.testtaskfooddelivery.core.R.id.locationFragment
+            binding.bottomNavView.isVisible =
+                destination.id != ru.sr.testtaskfooddelivery.core.R.id.locationFragment
 
             if (destination.id != ru.sr.testtaskfooddelivery.feature_home.R.id.productDialogFragment) {
                 val newTitle = bundle?.getString(destination.arguments.keys.last())
