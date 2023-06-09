@@ -1,10 +1,12 @@
 package ru.sr.testtaskfooddelivery.feature_home.presentation.home
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import androidx.core.view.isVisible
+import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import ru.sr.testtaskfooddelivery.base.BaseFragment
@@ -22,6 +24,11 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
     private fun onClickItem(item: String) = findNavController()
         .navigate(HomeFragmentDirections.actionBlankFragmentToCategoryFragment(item))
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        findNavController().navigate(ru.sr.testtaskfooddelivery.core.R.id.locationFragment,)
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

@@ -16,4 +16,9 @@
 
     <include
         app:graph="@navigation/nav_graph_search" />
+    <fragment
+        android:id="@id/locationFragment"
+        android:name="ru.sr.testtaskfooddelivery.feature_location.presentation.LocationFragment"
+        android:label="LocationFragment" />
+
 </navigation>

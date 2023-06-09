@@ -3,4 +3,5 @@
     <string name="сurrency">₽</string>
     <string name="pay">Оплатить</string>
     <string name="g">г</string>
+    <string name="error_location"> Неудалось определить позицию пользователя</string>
 </resources>
