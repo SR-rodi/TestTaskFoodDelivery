@@ -3,11 +3,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CartFragment">
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".presentation.CartFragment">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Корзина" />
+        android:layout_marginHorizontal="16dp"
+        android:orientation="vertical">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/cart_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            tools:listitem="@layout/cart_item"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:layout_height="0dp"/>
+
+        <Button
+            android:id="@+id/pay_Button"
+            android:layout_width="match_parent"
+            style="@style/Widget.App.Button"
+            tools:text ="Оплатить"
+            android:layout_marginBottom="16dp"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+
 
 </FrameLayout>

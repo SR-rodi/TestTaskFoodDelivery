@@ -19,6 +19,15 @@ android {
         jvmTarget = Config.jmvTarget
     }
 
+    buildFeatures {
+        viewBinding = true
+    }
+
 }
 dependencies {
+
+    implementation (Dependencies.Core.material)
+    implementation (Dependencies.Core.constraintlayout)
+    implementation (Dependencies.Core.lifecycle)
+    implementation (Dependencies.Core.viewmodel)
 }

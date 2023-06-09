@@ -21,4 +21,7 @@ android {
 
 }
 dependencies {
+
+    implementation (Dependencies.Core.material)
+    implementation (Dependencies.Image.glide)
 }

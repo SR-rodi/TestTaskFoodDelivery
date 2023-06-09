@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="сurrency">₽</string>
+    <string name="pay">Оплатить</string>
+    <string name="g">г</string>
+    <string name="error_location"> Не удалось определить позицию пользователя</string>
+</resources>

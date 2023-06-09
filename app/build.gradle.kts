@@ -39,9 +39,25 @@ dependencies {
     implementation(project(Module.featureProfile))
     implementation(project(Module.featureHome))
     implementation(project(Module.featureSearch))
+    implementation(project(Module.featureLocation))
+    implementation(project(Module.storage))
+    implementation(project(Module.core))
 
     implementation (Dependencies.Navigation.fragment)
     implementation (Dependencies.Navigation.ui)
+
+    implementation(Dependencies.Database.room)
+
+    implementation(platform(Dependencies.Network.okHttpBom))
+    implementation(Dependencies.Network.okHttp)
+    implementation(Dependencies.Network.okHttpLogging)
+    implementation(Dependencies.Network.retofit)
+    implementation(Dependencies.Network.retofitConverter)
+    implementation(Dependencies.Network.gson)
+    implementation(Dependencies.SplashScreen.splashScreen)
+
+    implementation( Dependencies.Di.koinCore)
+    implementation( Dependencies.Di.koinAndroid)
 
     implementation (Dependencies.Core.coreKtx)
     implementation (Dependencies.Core.appcompat)

@@ -1,6 +1,7 @@
 plugins {
     id(Plugins.library)
     id(Plugins.android)
+    id(Plugins.ksp)
 }
 
 android {
@@ -20,4 +21,12 @@ android {
     }
 }
 dependencies {
+
+    implementation (Dependencies.Database.roomRuntime)
+    implementation (Dependencies.Network.gson)
+    implementation (Dependencies.Network.retofit)
+    implementation (Dependencies.Network.retofitConverter)
+    implementation (Dependencies.Database.room)
+    annotationProcessor (Dependencies.Database.roomAnnotation)
+    ksp(Dependencies.Database.ksp)
 }

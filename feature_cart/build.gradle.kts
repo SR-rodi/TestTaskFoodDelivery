@@ -24,9 +24,17 @@ android {
 
 }
 dependencies {
-    implementation (Dependencies.Navigation.fragment)
-    implementation (Dependencies.Navigation.ui)
+    implementation(project(Module.coreUi))
+    implementation(project(Module.core))
+    implementation(project(Module.storage))
+    implementation(project(Module.delegate))
 
-    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.1")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1")
+    implementation(Dependencies.Navigation.fragment)
+    implementation(Dependencies.Navigation.ui)
+
+    implementation(Dependencies.Di.koinCore)
+    implementation(Dependencies.Di.koinAndroid)
+
+    implementation(Dependencies.Core.lifecycle)
+    implementation(Dependencies.Core.viewmodel)
 }
