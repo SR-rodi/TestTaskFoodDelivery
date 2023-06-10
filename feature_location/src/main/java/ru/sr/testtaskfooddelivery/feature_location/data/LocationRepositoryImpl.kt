@@ -2,7 +2,10 @@ package ru.sr.testtaskfooddelivery.feature_location.data
 
 import android.annotation.SuppressLint
 import android.os.Looper
+import android.util.Log
+import com.google.android.gms.location.LocationCallback
 import com.google.android.gms.location.LocationRequest
+import com.google.android.gms.location.LocationResult
 import com.google.android.gms.location.Priority
 import ru.sr.testtaskfooddelivery.feature_location.domain.repository.LocationRepository
 import ru.sr.testtaskfooddelivery.feature_location.domain.wrapper.DateProvider
@@ -28,7 +31,8 @@ internal class LocationRepositoryImpl(
 
     @SuppressLint("MissingPermission")
     private fun initFusedLocation() {
-        val request = LocationRequest.Builder(Priority.PRIORITY_HIGH_ACCURACY, 600_000).build()
+        val request = LocationRequest.Builder(Priority.PRIORITY_HIGH_ACCURACY, 100_000).build()
+       Log.e("kart","initFusedLocation()")
         fusedClient.client.requestLocationUpdates(
             request,
             userLocationCallBack,

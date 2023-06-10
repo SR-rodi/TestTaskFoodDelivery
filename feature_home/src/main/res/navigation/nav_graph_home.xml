@@ -15,7 +15,7 @@
     </fragment>
     <fragment
         android:id="@+id/categoryFragment"
-        android:name="ru.sr.testtaskfooddelivery.feature_home.presentation.dish.DishesFragment"
+        android:name="ru.sr.testtaskfooddelivery.feature_home.presentation.dishe.DishesFragment"
         android:label="CategoryFragment">
         <argument
             android:name="categoryName"

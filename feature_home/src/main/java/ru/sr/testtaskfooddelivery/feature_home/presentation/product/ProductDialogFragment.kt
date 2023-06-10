@@ -15,7 +15,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import ru.sr.testtaskfooddelivery.feature_home.databinding.DialogFragmentProductBinding
-import ru.sr.testtaskfooddelivery.feature_home.presentation.dish.model.DishUiModel
+import ru.sr.testtaskfooddelivery.feature_home.presentation.dishe.model.DisheUiModel
 import ru.sr.testtaskfooddelivery.feature_home.presentation.product.state.ProductState
 import ru.sr.testtaskfooddelivery.loadImage
 
@@ -62,7 +62,7 @@ class ProductDialogFragment : DialogFragment() {
         }
     }
 
-    private fun bind(item: DishUiModel) = binding.apply {
+    private fun bind(item: DisheUiModel) = binding.apply {
         productImage.loadImage(item.imageUrl)
         productDescription.text = item.description
         productPrice.text = item.price.toString()
