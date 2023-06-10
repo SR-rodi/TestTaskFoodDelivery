@@ -2,6 +2,7 @@ package ru.sr.testtaskfooddelivery
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.isVisible
 import androidx.navigation.fragment.NavHostFragment
@@ -19,6 +20,7 @@ class MainActivity : AppCompatActivity(), SetToolbar {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
         installSplashScreen()
 

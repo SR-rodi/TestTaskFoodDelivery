@@ -2,7 +2,7 @@ package ru.sr.testtaskfooddelivery.feature_home.presentation.dishe
 
 import android.util.Log
 import ru.sr.testtaskfooddelivery.base.BaseViewModel
-import ru.sr.testtaskfooddelivery.feature_home.data.DisheTag
+import ru.sr.testtaskfooddelivery.feature_home.data.DishTag
 import ru.sr.testtaskfooddelivery.feature_home.domain.usecase.DishesHomeUseCase
 import ru.sr.testtaskfooddelivery.feature_home.extension.toUi
 import ru.sr.testtaskfooddelivery.feature_home.presentation.dishe.model.DisheUiModel
@@ -30,12 +30,12 @@ class DishesViewModel(
     }
 
     fun getDishesByTag(tag: Tag) {
-        val items = allDishes.filter { model -> model.listTeg.contains(tag.disheTag.tag) }
+        val items = allDishes.filter { model -> model.listTeg.contains(tag.dishTag.tag) }
         viewState = viewState.copy(dishes = items, tags = selectorTags(tag.id))
     }
 
     private fun createTagsList(): List<Tag> {
-        val tags = DisheTag.values().map { disheTag -> Tag(disheTag, id = disheTag.ordinal) }
+        val tags = DishTag.values().map { disheTag -> Tag(disheTag, id = disheTag.ordinal) }
             .toMutableList()
         tags[tagSelectorId] = tags[tagSelectorId].copy(isSelected = true)
         return tags
